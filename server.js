@@ -14,6 +14,10 @@ app.use(shopRouter);
 
 app.use(adminRouter)
 
+app.use((req,res,next)=>{
+    res.status(404).send('<p>Page not Found</p>')
+})
+
 app.listen(3000, ()=>{
     console.log('Server start in 3000');
 })
