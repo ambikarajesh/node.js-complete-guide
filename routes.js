@@ -14,10 +14,11 @@ const requestHandler = (req, res)=>{
         })
         return req.on('end', ()=>{
             const buffer = Buffer.concat(data).toString();
-            fs.writeFileSync('./text.txt', buffer.split('=')[1])
-            res.statusCode = 302;
-            res.setHeader('Location', '/');
-            return res.end();
+            fs.writeFile('./text.txt', buffer.split('=')[1], (err)=>{
+                res.statusCode = 302;
+                res.setHeader('Location', '/');
+                return res.end();
+            })           
         })
         
         
