@@ -1,10 +1,11 @@
 const express = require('express');
+const path = require('path');
 const router = express.Router();
 
 
 // this is /admin/contact -> GET
 router.get('/contact', (req,res,next)=>{
-    res.send("<html><body><h1>Enter the phone NO:</h1> <form action = '/admin/contact' method = 'POST'> <input type = 'text' name = 'number'/><button type = 'submit'>Submit</button></form></body></html>");
+    res.sendFile(path.join(__dirname, "../", "views", "adminView.html"));
 })
 
 // this is /admin/contact -> POST
