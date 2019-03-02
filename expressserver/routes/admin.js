@@ -1,11 +1,12 @@
 const express = require('express');
 const path = require('path');
+const rootDir = require('../path/pathfinder')
 const router = express.Router();
 
 
 // this is /admin/contact -> GET
 router.get('/contact', (req,res,next)=>{
-    res.sendFile(path.join(__dirname, "../", "views", "adminView.html"));
+    res.sendFile(path.join(rootDir, "views", "adminView.html"));
 })
 
 // this is /admin/contact -> POST
