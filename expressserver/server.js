@@ -14,7 +14,7 @@ console.log(process.mainModule.filename);
 //     next();
 // })
 //app.engine('hbs', hbs({defaultLayout:'main-layout', extname:'hbs'}));
-app.set('view engine', 'pug');
+app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 app.use(bodyParser.urlencoded({extended:true}))

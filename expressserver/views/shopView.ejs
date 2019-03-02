@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <%- include('partials/head.ejs')  %>   
+    <body>    
+        <%- include('partials/nav.ejs')  %>        
+        <h1>Contacts</h1>
+        <% if (contacts.length>0) {%>
+            <ol>
+                <% contacts.forEach(contact =>{ %>
+                    <li class='each_item'>
+                        <p><strong>Name      : </strong><%= contact.firstname %> <%= contact.lastname %></p>
+                        <p><strong>Email     : </strong><%= contact.email %></p>
+                        <p><strong>Phone No. : </strong><%= contact.number %></p>
+                    </li>
+                <% }) %>
+            </ol>
+        <% } else {%>
+            <p>no contacts</p>
+        <% } %>
+        </body>
+</html>
