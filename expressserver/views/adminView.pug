@@ -1,0 +1,15 @@
+extend layout/main-layout
+block content
+    main
+        form.product-form(action="/admin/contact", method="POST")
+            div.form-control
+                label(for="firstname") First Name:
+                    input(type="text", name='firstname')
+                label(for="lastname") Last Name:
+                    input(type="text", name='lastname')
+                label(for="email") E-mail:
+                    input(type="text", name='email')
+                label(for="number") Phone Number:
+                    input(type="text", name='number')
+            button(type="submit") Submit
+                  

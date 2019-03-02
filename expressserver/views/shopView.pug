@@ -1,0 +1,14 @@
+extends layout/main-layout
+block content
+    main
+        h1 Contacts are
+        if contacts.length>0
+            ul
+                each contact in contacts
+                    li 
+                        div First Name: #{contact.firstname}
+                        div Last Name:  #{contact.lastname}
+                        div e-mail:     #{contact.email}
+                        div Phone.no:   #{contact.number}
+        else
+            p No contacts
