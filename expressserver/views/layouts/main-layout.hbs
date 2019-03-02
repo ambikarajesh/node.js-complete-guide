@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{title}}</title>
+        <link rel="stylesheet" type="text/css" href="/css/main.css">
+    </head>  
+ 
+    <body>
+    
+        <header class="main-header">
+                <nav class="main-header__nav">
+                        <ul class="main-header__item-list">
+                            <li class="main-header__item">
+                                <a class="{{#if shop}}active{{/if}}" href = '/'>shop</a>
+                            </li>
+                            <li class="main-header__item">
+                                    <a class="{{#if contact}}active{{/if}}" href = '/admin/contact'>Contacts</a>
+                            </li>
+                        </ul>
+                    </nav>
+        </header>
+        
+        {{{body}}}
+    </body>
+</html>

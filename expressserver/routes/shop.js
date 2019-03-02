@@ -8,7 +8,9 @@ router.get('/', (req,res,next)=>{
     res.render('shopView', {
         title:"Home",
         contacts:admin.contacts,
-        path:'/'
+        path:'/',
+        hasContacts:admin.contacts.length>0,
+        shop:true
     });
 })
 

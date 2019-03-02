@@ -79,3 +79,15 @@ button:active {
     background-color: #3e00a1;
     color: white;
 }
+
+.each_item{
+    border:1px solid #ccc;
+    color:#fff;
+    background-color:#aaa;
+    padding:5px 10px;
+    margin:5px auto;
+    width:80%;
+}
+.each_item > p > strong{
+    color:#444;
+}

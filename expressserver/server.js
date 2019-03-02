@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const hbs = require('express-handlebars');
 const app = express();
 const admin = require('./routes/admin');
 const shopRouter = require('./routes/shop');
@@ -12,6 +13,7 @@ console.log(process.mainModule.filename);
 //     console.log('middleware');
 //     next();
 // })
+//app.engine('hbs', hbs({defaultLayout:'main-layout', extname:'hbs'}));
 app.set('view engine', 'pug');
 app.set('views', 'views');
 

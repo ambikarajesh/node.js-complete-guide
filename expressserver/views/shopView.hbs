@@ -1,0 +1,14 @@
+<h1>Contacts</h1>
+{{#if hasContacts}}
+    <ol>
+        {{#each contacts}}
+            <li class='each_item'>
+                <p><strong>Name      : </strong>{{this.firstname}} {{this.lastname}}</p>
+                <p><strong>Email     : </strong>{{this.email}}</p>
+                <p><strong>Phone No. : </strong>{{this.number}}</p>
+            </li>
+        {{/each}}
+    </ol>
+{{else}}
+    <p>no contacts</p>
+{{/if}}

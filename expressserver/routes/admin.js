@@ -8,7 +8,8 @@ const contacts = [];
 router.get('/contact', (req,res,next)=>{
     res.render('adminView', {
         title:'Contact',
-        path:'/admin/contact'
+        path:'/admin/contact',
+        contact:true
     });
 })
 
