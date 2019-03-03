@@ -3,10 +3,12 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const hbs = require('express-handlebars');
 const app = express();
-const admin = require('./routes/admin');
+const adminRouter = require('./routes/admin');
 const shopRouter = require('./routes/shop');
-const rooDir = require('./path/pathfinder');
+const errorController = require('./controllers/error');
+//const rooDir = require('./path/pathfinder');
 console.log(process.mainModule.filename);
+
 
 
 // app.use((req,res,next)=>{
@@ -21,14 +23,9 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(shopRouter);
 
-app.use('/admin',admin.router)
+app.use('/admin',adminRouter)
 
-app.use((req,res,next)=>{
-    //res.status(404).sendFile(path.join(rooDir, 'views', 'error.html'))
-    res.status(404).render('error', {
-        title:'Page not Found'
-    })
-})
+app.use(errorController.error404)
 
 app.listen(3000, ()=>{
     console.log('Server start in 3000');
