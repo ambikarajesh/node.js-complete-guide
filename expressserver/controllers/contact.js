@@ -1,4 +1,9 @@
-const contacts = [];
+const config = require('../config');
+const ContactModel = require('../models/contact');
+
+
+const contactModel = new ContactModel(config.data.contacts);
+
 
 exports.getContact = (req,res,next)=>{
     res.render('adminView', {
@@ -8,11 +13,12 @@ exports.getContact = (req,res,next)=>{
     });
 }
 
-exports.postContact = (req,res, next)=>{
-    contacts.push(req.body)
+exports.postContact = async(req,res, next)=>{
+    contactModel.storeContact(req.body);
     res.redirect('/');
 }
-exports.getContacts = (req,res,next)=>{
+exports.getContacts = async (req,res,next)=>{
+    const contacts = await contactModel.fetchContacts();
     res.render('shopView', {
         title:"Home",
         contacts:contacts,

@@ -6,9 +6,11 @@ const app = express();
 const adminRouter = require('./routes/admin');
 const shopRouter = require('./routes/shop');
 const errorController = require('./controllers/error');
+
+
+
 //const rooDir = require('./path/pathfinder');
 console.log(process.mainModule.filename);
-
 
 
 // app.use((req,res,next)=>{
@@ -19,9 +21,11 @@ console.log(process.mainModule.filename);
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
+
+
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.static(path.join(__dirname, 'public')))
-app.use(shopRouter);
+app.use('/', shopRouter);
 
 app.use('/admin',adminRouter)
 

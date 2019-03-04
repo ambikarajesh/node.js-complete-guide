@@ -2,7 +2,7 @@ const express = require('express');
 // const path = require('path');
 // const rootDir = require('../path/pathfinder')
 const router = express.Router();
-const contactsController = require("../controllers/contacts");
+const contactsController = require("../controllers/contact");
 
 
 // this is /admin/contact -> GET
